@@ -104,3 +104,11 @@ button:active{transform:translateY(1px)}
   #map{height:420px}
   .topbar .brand{font-size:34px}
 }
+/* Center the main question title */
+h1,
+.card h1,
+#search h1,
+#questionTitle {
+  text-align: center;
+  margin: 0 auto;
+}
