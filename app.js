@@ -1,275 +1,388 @@
-// --- Mock data (real-ish Tel Aviv locations) ---
+/* ---------------------------- Exhibitions data ---------------------------- */
+/* דוגמאות + 30 חדשות. אם אין lat/lng — הקוד יג׳אקוד אוטומטית לפי הכתובת. */
 const EXHIBITIONS = [
+  // === Existings with coordinates ===
   {
-    id: 'tlv-1',
-    title: 'Light & Dust',
-    artist: ['Sigalit Landau'],
-    venue: 'Tel Aviv Museum of Art — Herta & Paul Amir Building',
-    address: '27 Shaul Hamelech Blvd, Tel Aviv',
-    coords: [32.077106, 34.786635],
-    start: '2025-09-01',
-    end: '2025-10-31',
+    id: "tlv1",
+    title: "City Layers",
+    artist: "Noa Ben-David",
+    venue: "Tel Aviv Museum of Art",
+    address: "27 Shaul Hamelech Blvd, Tel Aviv",
+    lat: 32.07777, lng: 34.78644,
+    startDate: "2025-09-01", endDate: "2025-12-31",
+    website: "https://www.tamuseum.org.il/",
+    description: "Large-scale installation exploring urban patterns and memory.",
     images: [
-      'https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop'
+      "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1548092372-0d1bd40894a3?q=80&w=1200&auto=format&fit=crop"
     ]
   },
   {
-    id: 'tlv-2',
-    title: 'Strata / Layers',
-    artist: ['Michal Rovner'],
-    venue: 'Helena Rubinstein Pavilion',
-    address: '6 Tarsat Ave, Tel Aviv',
-    coords: [32.074842, 34.781638],
-    start: '2025-08-15',
-    end: '2025-11-10',
+    id: "tlv2",
+    title: "Soft Machines",
+    artist: "Ariel Cohen",
+    venue: "Cuckoo's Nest Gallery",
+    address: "5 Shvil HaMeretz, Tel Aviv",
+    lat: 32.0537, lng: 34.7646,
+    startDate: "2025-09-10", endDate: "2025-11-30",
+    website: "https://www.facebook.com/ckcknest/",
+    description: "Kinetic sculptures that blur the line between craft and code.",
     images: [
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop'
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1200&auto=format&fit=crop"
     ]
   },
   {
-    id: 'tlv-3',
-    title: 'Analog Echo',
-    artist: ['Guy Yanai'],
-    venue: 'Rothschild 69 — Gallery Cluster',
-    address: '69 Rothschild Blvd, Tel Aviv',
-    coords: [32.0649, 34.7742],
-    start: '2025-09-10',
-    end: '2025-10-20',
+    id: "tlv3",
+    title: "Chromatic Walks",
+    artist: "Maya Levi",
+    venue: "Florentin 45",
+    address: "45 Florentin St, Tel Aviv",
+    lat: 32.0567, lng: 34.7707,
+    startDate: "2025-08-20", endDate: "2025-10-30",
+    website: "https://www.instagram.com/florentin45/",
+    description: "Painting series inspired by daily strolls through South Tel Aviv.",
     images: [
-      'https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1520697222862-79bcdfe9c4ee?q=80&w=1600&auto=format&fit=crop'
+      "https://images.unsplash.com/photo-1513351105270-0f9ffda96511?q=80&w=1200&auto=format&fit=crop"
     ]
   },
   {
-    id: 'tlv-4',
-    title: 'Material Poems',
-    artist: ['Nelly Agassi'],
-    venue: 'Gordon Gallery',
-    address: '5 Hapelech St, Tel Aviv',
-    coords: [32.05885, 34.7702],
-    start: '2025-09-05',
-    end: '2025-12-05',
+    id: "jer1",
+    title: "Stone & Light",
+    artist: "Yael Azulay",
+    venue: "Israel Museum",
+    address: "Ruppin Blvd, Jerusalem",
+    lat: 31.7733, lng: 35.2033,
+    startDate: "2025-09-05", endDate: "2026-01-15",
+    website: "https://www.imj.org.il/en",
+    description: "New media works dialoguing with archeology collections.",
     images: [
-      'https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1517697471339-4aa32003c11a?q=80&w=1600&auto=format&fit=crop'
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
     ]
   },
-  {
-    id: 'tlv-5',
-    title: 'Urban Skin',
-    artist: ['Tsibi Geva'],
-    venue: 'Dvir Gallery',
-    address: '4 Hapelech St, Tel Aviv',
-    coords: [32.05845, 34.7707],
-    start: '2025-08-20',
-    end: '2025-10-25',
-    images: [
-      'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop'
-    ]
-  },
-  {
-    id: 'tlv-6',
-    title: 'Studio Dreams',
-    artist: ['Rami Maymon'],
-    venue: 'RawArt Gallery (Kiryat Hamelacha)',
-    address: '3 HaAmal St, Tel Aviv',
-    coords: [32.0506, 34.7726],
-    start: '2025-09-12',
-    end: '2025-11-30',
-    images: [
-      'https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop'
-    ]
-  }
+
+  // === New: Tel Aviv & area (addresses, geocode at runtime) ===
+  { id:"tlv4", title:"Echo Chambers", artist:"Dana Harel", venue:"Sommer Contemporary Art", address:"54 Rothschild Blvd, Tel Aviv", startDate:"2025-10-01", endDate:"2026-01-10", website:"https://www.sommergallery.com", description:"Sound, language and space." },
+  { id:"tlv5", title:"Afterimage", artist:"Gil Shani", venue:"Braverman Gallery", address:"12 Hapelech St, Tel Aviv", startDate:"2025-09-22", endDate:"2025-12-01", website:"https://www.bravermangallery.com", description:"Installations about memory and light." },
+  { id:"tlv6", title:"Paper Bodies", artist:"Lee Koren", venue:"RawArt Gallery", address:"3 Shvil HaMeretz St, Tel Aviv", startDate:"2025-09-25", endDate:"2025-11-30", website:"https://www.rawart-gallery.com", description:"Paper, print and sculpture." },
+  { id:"tlv7", title:"Night Garden", artist:"Shir Moran", venue:"Rosenfeld Gallery", address:"19 Hamelech George St, Tel Aviv", startDate:"2025-10-05", endDate:"2026-01-05", website:"https://www.rosenfeldgallery.co.il", description:"Painting in twilight tones." },
+  { id:"tlv8", title:"Dry Pixel", artist:"Omer Keinan", venue:"Gordon Gallery", address:"6 Hapelech St, Tel Aviv", startDate:"2025-09-18", endDate:"2025-12-12", website:"https://www.gordongallery.co.il", description:"Video, CG and fragile materials." },
+  { id:"tlv9", title:"Local Orbit", artist:"Tal Niv", venue:"Chelouche Gallery", address:"5 Maze St, Tel Aviv", startDate:"2025-10-12", endDate:"2026-01-02", website:"https://www.chelouchegallery.com", description:"Drawings and ceramic objects." },
+  { id:"tlv10", title:"Hertz 19", artist:"Group Show", venue:"Artspace Tel Aviv", address:"19 Hayarkon St, Tel Aviv", startDate:"2025-10-15", endDate:"2025-12-31", website:"https://www.artspace-tlv.org.il", description:"Group exhibit of south-TLV artists." },
+  { id:"tlv11", title:"Coded Weave", artist:"Neta Avraham", venue:"Alfred Gallery", address:"8 Simtat Shlush, Tel Aviv", startDate:"2025-09-20", endDate:"2025-11-20", website:"https://www.alfred-gallery.com", description:"Textile & algorithmic patterns." },
+  { id:"tlv12", title:"Under Construction", artist:"Tamar Golan", venue:"Beit Ha’ir Museum", address:"27 Bialik St, Tel Aviv", startDate:"2025-09-28", endDate:"2025-12-20", website:"https://www.beithair.org", description:"City stories and archives." },
+  { id:"tlv13", title:"Field Recording", artist:"Nadav K", venue:"CCA Tel Aviv", address:"61 Tsfat St, Tel Aviv", startDate:"2025-10-08", endDate:"2026-01-18", website:"https://www.cca.org.il", description:"Sound as sculptural matter." },
+  { id:"tlv14", title:"Moving Lines", artist:"Rona Tal", venue:"Beit Kandinof", address:"14 HaTsorfim St, Jaffa, Tel Aviv", startDate:"2025-09-30", endDate:"2025-12-30", website:"https://kandinof.co.il", description:"Drawings that almost walk." },
+  { id:"tlv15", title:"Port Light", artist:"Group Show", venue:"Warehouse 2 Jaffa Port", address:"Jaffa Port, Tel Aviv", startDate:"2025-10-16", endDate:"2026-01-20", website:"https://www.jaffaport.co.il", description:"Large-scale installations by the sea." },
+  { id:"tlv16", title:"Screen Skin", artist:"Ofir Azulay", venue:"Basis Tel Aviv (project space)", address:"12 Ha'amal St, Tel Aviv", startDate:"2025-09-26", endDate:"2025-11-29", website:"https://www.basis.org.il", description:"Performance & video." },
+  { id:"tlv17", title:"Negative Space", artist:"Shai H", venue:"Hanina Gallery", address:"19 Hazorfim St, Tel Aviv", startDate:"2025-10-10", endDate:"2025-12-15", website:"https://www.haninagallery.com", description:"Photography in grayscale." },
+  { id:"tlv18", title:"Glass Clouds", artist:"Ravit Shachar", venue:"Design Museum Holon (gallery)", address:"8 Pinkhas Eilon St, Holon", startDate:"2025-10-02", endDate:"2026-02-01", website:"https://www.dmh.org.il", description:"Glass design & light." },
+
+  // === Tel Aviv – Kiryat HaMelacha cluster ===
+  { id:"km1", title:"Edge of Canvas", artist:"Noga Amir", venue:"Maya Gallery", address:"3 HaVradim St, Tel Aviv", startDate:"2025-09-21", endDate:"2025-11-15", website:"", description:"Painting experiments from Kiryat HaMelacha." },
+  { id:"km2", title:"Heat Map", artist:"Itamar Weiss", venue:"Sansana Space", address:"8 HaAmal St, Tel Aviv", startDate:"2025-09-24", endDate:"2025-12-05", website:"", description:"Color as temperature." },
+  { id:"km3", title:"Studio Noise", artist:"Group Show", venue:"Third Floor Project", address:"15 HaAmal St, Tel Aviv", startDate:"2025-10-03", endDate:"2025-12-12", website:"", description:"Works from open studios." },
+  { id:"km4", title:"Soft Hardware", artist:"Tzlil L", venue:"Circular Space", address:"7 HaMeretz St, Tel Aviv", startDate:"2025-10-07", endDate:"2025-12-30", website:"", description:"Knitting meets code." },
+  { id:"km5", title:"Sun Bleach", artist:"Reut Cohen", venue:"Hamalacha 13", address:"13 HaMelacha St, Tel Aviv", startDate:"2025-10-12", endDate:"2025-12-28", website:"", description:"Textiles faded by the Mediterranean sun." },
+
+  // === Herzliya / Ramat Gan / Petach Tikva ===
+  { id:"hz1", title:"Radical Forms", artist:"Group Show", venue:"Herzliya Museum of Contemporary Art", address:"4 Habanim St, Herzliya", startDate:"2025-09-27", endDate:"2026-01-31", website:"https://www.herzliyamuseum.co.il", description:"Sculpture across decades." },
+  { id:"rg1", title:"Painter’s Proof", artist:"Oded Y", venue:"Ramat Gan Museum of Israeli Art", address:"20 Abba Hillel Silver Rd, Ramat Gan", startDate:"2025-10-04", endDate:"2026-01-14", website:"https://www.rmg.org.il", description:"Printmaking survey." },
+  { id:"pt1", title:"Delay/Replay", artist:"Nofar B.", venue:"Petach Tikva Museum of Art", address:"30 Arlozorov St, Petach Tikva", startDate:"2025-10-06", endDate:"2026-01-06", website:"https://www.petachtikvamuseum.com", description:"Video installations and loops." },
+
+  // === Jerusalem ===
+  { id:"jer2", title:"Paper Jerusalem", artist:"Ayelet L.", venue:"Bezalel Gallery", address:"1 Mount Scopus, Jerusalem", startDate:"2025-10-01", endDate:"2025-12-10", website:"https://www.bezalel.ac.il", description:"Works on paper." },
+  { id:"jer3", title:"Campus Echo", artist:"Musrara Dept. show", venue:"Musrara, the Naggar School", address:"9 Musrara St, Jerusalem", startDate:"2025-10-09", endDate:"2025-12-20", website:"https://www.musrara.co.il", description:"Photography & New-Media." },
+  { id:"jer4", title:"City Springs", artist:"Group Show", venue:"Beit Hansen", address:"14 Gdalyahu Alon St, Jerusalem", startDate:"2025-10-11", endDate:"2026-01-25", website:"https://www.beithansen.co.il", description:"Design & community projects." },
+
+  // === Haifa & North ===
+  { id:"hfa1", title:"Blue North", artist:"Group Show", venue:"Haifa Museum of Art", address:"26 Shabtai Levi St, Haifa", startDate:"2025-09-29", endDate:"2026-01-10", website:"https://www.hma.org.il", description:"Sea-inspired works." },
+  { id:"hfa2", title:"Light Line", artist:"Aya Y.", venue:"Tikotin Museum of Japanese Art", address:"89 Hanassi Ave, Haifa", startDate:"2025-10-02", endDate:"2026-01-09", website:"https://www.tikotin-museum.org.il", description:"Ink, paper, silence." },
+  { id:"hfa3", title:"Shared Rooms", artist:"Group Show", venue:"Beit HaGefen", address:"2 Hagefen St, Haifa", startDate:"2025-10-13", endDate:"2026-01-18", website:"https://beit-hagefen.com", description:"Dialogue across cultures." },
+  { id:"umf1", title:"Valley Lights", artist:"Group Show", venue:"Umm al-Fahm Art Gallery", address:"Umm al-Fahm, Israel", startDate:"2025-10-05", endDate:"2026-01-05", website:"https://ummelfahemgallery.com", description:"Regional contemporary survey." },
+  { id:"tfn1", title:"Steel & Pines", artist:"Industrial Poetics", venue:"Open Museum Tefen", address:"Tefen Industrial Park, Israel", startDate:"2025-10-03", endDate:"2026-02-03", website:"https://www.omuseums.org.il", description:"Art & industry." },
+
+  // === South / Center ===
+  { id:"bsh1", title:"Desert Lines", artist:"Galit A.", venue:"The Negev Museum of Art", address:"60 Ha'atzmaut Ave, Be'er Sheva", startDate:"2025-10-07", endDate:"2026-01-30", website:"https://www.negev-museum.org.il", description:"Works shaped by the Negev." },
+  { id:"ash1", title:"Harbor Color", artist:"Moran Z.", venue:"Ashdod Museum of Art (Monart)", address:"4 Derech Erez, Ashdod", startDate:"2025-10-02", endDate:"2026-01-16", website:"https://www.ashdodartmuseum.org.il", description:"Painting & sea." },
+  { id:"bty1", title:"Coastline", artist:"Group Show", venue:"MoBY Bat-Yam Museums", address:"27 Struma St, Bat Yam", startDate:"2025-10-12", endDate:"2026-01-19", website:"https://www.moby.org.il", description:"Urban & coastal." },
+  { id:"hln1", title:"Material Dialogues", artist:"Tal A.", venue:"Design Museum Holon", address:"8 Pinkhas Eilon St, Holon", startDate:"2025-09-30", endDate:"2026-02-28", website:"https://www.dmh.org.il", description:"Design research showcase." },
+
+  // === Jaffa / Extras ===
+  { id:"jaf1", title:"Port Stories", artist:"Group Show", venue:"The Jaffa Art Salon", address:"24 Yefet St, Tel Aviv-Yafo", startDate:"2025-09-26", endDate:"2025-12-26", website:"", description:"Stories from the old port." },
+  { id:"jaf2", title:"Salt & Citrus", artist:"Eden L.", venue:"Beit Romano (Project Space)", address:"9 Derech Jaffa, Tel Aviv", startDate:"2025-10-09", endDate:"2025-12-29", website:"", description:"Food, scent and memory." }
 ];
 
-// --- Helpers ---
-const $ = sel => document.querySelector(sel);
-const $$ = sel => Array.from(document.querySelectorAll(sel));
+/* ------------------------------ Geocode cache ----------------------------- */
+/* נשתמש בקאש מקומי כדי לא לג׳אקר כל פעם מחדש */
+const GEO_CACHE_KEY = "iseeeee_geo_cache_v1";
+function loadGeoCache(){
+  try { return JSON.parse(localStorage.getItem(GEO_CACHE_KEY) || "{}"); }
+  catch { return {}; }
+}
+function saveGeoCache(cache){ localStorage.setItem(GEO_CACHE_KEY, JSON.stringify(cache)); }
+let geoCache = loadGeoCache();
 
-function kmDistance(a, b){
-  const [lat1,lon1] = a, [lat2,lon2] = b;
+/* תור ג׳אוקודינג (בקשה אחת כל ~700ms) */
+let geocodeQueue = [];
+let geocodeTimer = null;
+
+function enqueueGeocode(ex){
+  if(ex.lat && ex.lng) return;
+  if(!ex.address) return;
+  if(geoCache[ex.address]){
+    const {lat,lng} = geoCache[ex.address];
+    ex.lat = lat; ex.lng = lng;
+    return;
+  }
+  geocodeQueue.push(ex);
+  if(!geocodeTimer){
+    geocodeTimer = setInterval(processGeocodeQueue, 700);
+  }
+}
+
+async function processGeocodeQueue(){
+  if(geocodeQueue.length === 0){
+    clearInterval(geocodeTimer);
+    geocodeTimer = null;
+    return;
+  }
+  const ex = geocodeQueue.shift();
+  try{
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(ex.venue + ", " + ex.address)}`;
+    const res = await fetch(url, { headers:{ "Accept-Language":"en-US" } });
+    const data = await res.json();
+    if(data && data[0]){
+      ex.lat = parseFloat(data[0].lat);
+      ex.lng = parseFloat(data[0].lon);
+      geoCache[ex.address] = {lat:ex.lat, lng:ex.lng};
+      saveGeoCache(geoCache);
+      render(); // לעדכן מפה ורשימה כשמציאת קואורדינטות
+    }
+  }catch(e){
+    // שקט; פשוט נדלג
+  }
+}
+
+/* ------------------------------ App state -------------------------------- */
+let userLoc = null;     // {lat, lng}
+let map, userMarker;
+let markersLayer;
+
+const qs = (sel) => document.querySelector(sel);
+const radiusInput = qs("#radiusKm");
+const radiusLabel = qs("#radiusLabel");
+const locStatus   = qs("#locStatus");
+
+/* ------------------------------ Utilities -------------------------------- */
+const toRad = (deg) => deg * Math.PI / 180;
+function haversineKm(a, b){
   const R = 6371;
-  const dLat = (lat2-lat1)*Math.PI/180;
-  const dLon = (lon2-lon1)*Math.PI/180;
-  const s1 = Math.sin(dLat/2)*Math.sin(dLat/2);
-  const s2 = Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
-  return 2*R*Math.asin(Math.sqrt(s1+s2));
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const s1 = Math.sin(dLat/2)**2 +
+             Math.cos(toRad(a.lat))*Math.cos(toRad(b.lat))*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(s1));
+}
+function fmtDate(iso){ return new Date(iso).toLocaleDateString(); }
+function inDateRange(show, startISO, endISO){
+  const s = startISO ? new Date(startISO) : null;
+  const e = endISO   ? new Date(endISO)   : null;
+  const a = new Date(show.startDate);
+  const b = new Date(show.endDate);
+  if(s && b < s) return false;
+  if(e && a > e) return false;
+  return true;
 }
 
-function inRange(d, a, b){
-  const x = new Date(d).getTime();
-  return (!a || x>=new Date(a).getTime()) && (!b || x<=new Date(b).getTime());
-}
-
-// --- Map ---
-let map, userMarker, markersLayer;
+/* ------------------------------- Map init -------------------------------- */
 function initMap(){
-  map = L.map('map', { zoomControl:true, scrollWheelZoom:true }).setView([32.066,34.777], 13);
+  map = L.map('map', { zoomControl:true }).setView([32.078,34.786], 12);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom:19,
     attribution:'© OpenStreetMap'
   }).addTo(map);
 
-  // locate control
-  const locate = L.control({position:'topleft'});
-  locate.onAdd = function(){
-    const div = L.DomUtil.create('div','leaflet-control-locate');
-    div.textContent = 'My location';
-    div.onclick = () => getMyLocation(true);
-    return div;
-  };
-  locate.addTo(map);
-
   markersLayer = L.layerGroup().addTo(map);
 }
+initMap();
 
-function setUserMarker(latlng){
-  if(!userMarker){
-    const catIcon = L.divIcon({
-      className:'',
-      html:`<div style="font-size:26px">🐈</div>`
-    });
-    userMarker = L.marker(latlng,{icon:catIcon}).addTo(map);
-  }else{
-    userMarker.setLatLng(latlng);
-  }
+/* ---------------------------- Location helpers --------------------------- */
+function setUserLocation(lat, lng, text = "Selected location"){
+  userLoc = {lat, lng};
+  if(userMarker){ userMarker.remove(); }
+  userMarker = L.marker([lat,lng], {title: "You are here"}).addTo(map)
+               .bindPopup(text);
+  map.setView([lat,lng], 13);
+  locStatus.textContent = `Location: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+  render();
 }
 
-function render(exhibitions, center){
-  markersLayer.clearLayers();
-  $('#list').innerHTML = '';
-
-  exhibitions.forEach(ex => {
-    // marker
-    const m = L.marker(ex.coords).addTo(markersLayer);
-    m.bindPopup(`<b>${ex.title}</b><br>${ex.venue}`);
-    m.on('click', () => openModal(ex));
-
-    // list card
-    const el = document.createElement('div');
-    el.className = 'card';
-    el.innerHTML = `
-      <h3>${ex.title}</h3>
-      <div class="muted">${ex.artist.join(', ')}</div>
-      <div class="address">${ex.venue}</div>
-      <div class="muted">${ex.start} → ${ex.end}</div>
-      <div style="margin-top:8px"><span class="badge">details</span></div>
-    `;
-    el.addEventListener('click', () => openModal(ex));
-    $('#list').appendChild(el);
-  });
-
-  if(center) map.setView(center, 13);
-}
-
-function openModal(ex){
-  const body = $('#modalBody');
-  body.innerHTML = `
-    <h2 style="margin-top:0">${ex.title}</h2>
-    <div class="muted">${ex.artist.join(', ')}</div>
-    <div class="address">${ex.venue} — ${ex.address}</div>
-    <div class="muted">${ex.start} → ${ex.end}</div>
-    <div class="gallery">
-      <button id="prevImg">‹</button>
-      <img id="galImg" src="${ex.images[0]}" alt="${ex.title}" />
-      <button id="nextImg">›</button>
-    </div>
-    <p><button class="primary" id="dirBtn">Open in Maps</button></p>
-  `;
-  let idx = 0;
-  const update = ()=> $('#galImg').src = ex.images[idx];
-  $('#prevImg').onclick = ()=>{ idx=(idx-1+ex.images.length)%ex.images.length; update(); };
-  $('#nextImg').onclick = ()=>{ idx=(idx+1)%ex.images.length; update(); };
-  $('#dirBtn').onclick = ()=>{
-    const [lat,lng] = ex.coords;
-    window.open(`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`,'_blank');
-  };
-  $('#modal').classList.remove('hidden');
-}
-$('#modalClose').onclick = ()=> $('#modal').classList.add('hidden');
-$('#modal').addEventListener('click', (e)=>{ if(e.target.id==='modal') $('#modal').classList.add('hidden'); });
-
-// --- Filters & location ---
-let userLocation = null;
-
-function applyFilters(){
-  const artistQ = $('#artistInput').value.trim().toLowerCase();
-  const from = $('#dateFrom').value || null;
-  const to = $('#dateTo').value || null;
-  const radiusKm = +$('#radius').value;
-
-  let list = EXHIBITIONS.filter(ex => {
-    const byArtist = !artistQ || ex.artist.join(' ').toLowerCase().includes(artistQ);
-    const byDate = inRange(ex.start, from, to) || inRange(ex.end, from, to) || (from==null && to==null);
-    let byDistance = true;
-    if(userLocation){
-      byDistance = kmDistance(userLocation, ex.coords) <= radiusKm;
-    }
-    return byArtist && byDate && byDistance;
-  });
-
-  render(list, null);
-}
-
-async function geocodeAddress(){
-  const q = $('#addressInput').value.trim();
-  if(!q) return;
-  $('#locStatus').textContent = 'Searching address...';
-  const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}`;
-  const res = await fetch(url, {headers:{'Accept-Language':'en'}});
-  const json = await res.json();
-  if(json && json[0]){
-    const lat = +json[0].lat, lon = +json[0].lon;
-    userLocation = [lat, lon];
-    setUserMarker(userLocation);
-    $('#locStatus').textContent = `Location set: ${json[0].display_name}`;
-    applyFilters();
-    map.setView(userLocation, 13);
-  }else{
-    $('#locStatus').textContent = 'Address not found';
-  }
-}
-
-function getMyLocation(pan=false){
+qs("#myLocBtn").addEventListener("click", () => {
   if(!navigator.geolocation){
-    $('#locStatus').textContent = 'Geolocation is not supported';
+    alert("Geolocation is not supported on this device.");
     return;
   }
-  $('#locStatus').textContent = 'Locating...';
-  navigator.geolocation.getCurrentPosition(pos => {
-    userLocation = [pos.coords.latitude, pos.coords.longitude];
-    setUserMarker(userLocation);
-    $('#locStatus').textContent = `Using your location`;
-    if(pan) map.setView(userLocation, 13);
-    applyFilters();
-  }, err => {
-    $('#locStatus').textContent = 'Location permission denied';
+  navigator.geolocation.getCurrentPosition(
+    (pos)=> setUserLocation(pos.coords.latitude, pos.coords.longitude, "My location"),
+    (err)=> alert("Couldn't get your location: " + err.message),
+    { enableHighAccuracy:true, timeout:10000 }
+  );
+});
+
+qs("#searchAddrBtn").addEventListener("click", async () => {
+  const q = qs("#addressInput").value.trim();
+  if(!q){ alert("Type an address first."); return; }
+  try{
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}`;
+    const res = await fetch(url, { headers:{'Accept-Language':'en'} });
+    const data = await res.json();
+    if(!data.length){ alert("Address not found."); return; }
+    const { lat, lon, display_name } = data[0];
+    setUserLocation(parseFloat(lat), parseFloat(lon), display_name);
+  }catch(e){
+    alert("Address lookup failed.");
+  }
+});
+
+/* ------------------------------- Rendering ------------------------------- */
+function ensureGeocodes(){
+  EXHIBITIONS.forEach(ex => { if(!(ex.lat && ex.lng)) enqueueGeocode(ex); });
+}
+
+function render(){
+  radiusLabel.textContent = radiusInput.value;
+  markersLayer.clearLayers();
+  const listEl = qs("#results");
+  listEl.innerHTML = "";
+
+  // make sure geocoding is running for missing coords
+  ensureGeocodes();
+
+  const namePart = qs("#artistInput").value.trim().toLowerCase();
+  const sDate = qs("#startDate").value || null;
+  const eDate = qs("#endDate").value || null;
+  const maxKm = parseInt(radiusInput.value, 10);
+
+  const shows = EXHIBITIONS.filter(ex => {
+    const hasCoords = !!(ex.lat && ex.lng);
+    const matchName = !namePart || ex.artist.toLowerCase().includes(namePart) || ex.title.toLowerCase().includes(namePart);
+    const matchDates = inDateRange(ex, sDate, eDate);
+    const matchDist = !userLoc || (hasCoords && haversineKm(userLoc, {lat:ex.lat,lng:ex.lng}) <= maxKm);
+    return matchName && matchDates && matchDist;
+  });
+
+  shows.forEach(ex => {
+    if(ex.lat && ex.lng){
+      const m = L.marker([ex.lat, ex.lng]).addTo(markersLayer);
+      m.bindPopup(`<b>${ex.title}</b><br/>${ex.venue}<br/><small>${fmtDate(ex.startDate)}–${fmtDate(ex.endDate)}</small>`);
+      m.on("click", () => openModal(ex));
+    }
+  });
+
+  if(!shows.length){
+    listEl.innerHTML = `<div class="muted">No exhibitions match your filters (or still locating addresses...).</div>`;
+    return;
+  }
+
+  shows.forEach(ex => {
+    const card = document.createElement("div");
+    card.className = "show-card";
+    card.innerHTML = `
+      <div class="title">${ex.title}</div>
+      <div class="meta">${ex.artist} • ${ex.venue} • ${fmtDate(ex.startDate)} – ${fmtDate(ex.endDate)}</div>
+      <div class="actions">
+        <button data-id="${ex.id}" class="btn btn-more">Read more</button>
+        <button data-id="${ex.id}" class="btn btn-center">Center on map</button>
+        <button data-artist="${ex.artist}" class="btn btn-follow">${isFollowing(ex.artist)?'Following':'Follow artist'}</button>
+      </div>
+    `;
+    listEl.appendChild(card);
+  });
+
+  listEl.querySelectorAll(".btn-more").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      const ex = EXHIBITIONS.find(x => x.id === b.dataset.id);
+      if(ex) openModal(ex);
+    });
+  });
+  listEl.querySelectorAll(".btn-center").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      const ex = EXHIBITIONS.find(x => x.id === b.dataset.id);
+      if(ex && ex.lat && ex.lng){ map.setView([ex.lat, ex.lng], 15); }
+    });
+  });
+  listEl.querySelectorAll(".btn-follow").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      toggleFollow(b.dataset.artist);
+      b.textContent = isFollowing(b.dataset.artist) ? 'Following' : 'Follow artist';
+    });
   });
 }
 
-// --- UI wiring ---
-document.addEventListener('DOMContentLoaded', () => {
-  initMap();
-  render(EXHIBITIONS, [32.066,34.777]);
+/* --------------------------- Modal (details) ----------------------------- */
+const modal = qs("#modal");
+const modalTitle = qs("#modalTitle");
+const modalMeta  = qs("#modalMeta");
+const modalDesc  = qs("#modalDesc");
+const modalGallery = qs("#modalGallery");
+const followBtn = qs("#followBtn");
+const navigateBtn = qs("#navigateBtn");
+const websiteBtn = qs("#websiteBtn");
 
-  $('#radius').addEventListener('input', () => {
-    $('#radiusVal').textContent = $('#radius').value;
-    applyFilters();
-  });
-  $('#btnFilter').addEventListener('click', applyFilters);
-  $('#btnReset').addEventListener('click', () => {
-    $('#addressInput').value = '';
-    $('#artistInput').value = '';
-    $('#dateFrom').value = '';
-    $('#dateTo').value = '';
-    userLocation = null;
-    $('#locStatus').textContent = 'No location selected yet';
-    if(userMarker){ map.removeLayer(userMarker); userMarker = null; }
-    render(EXHIBITIONS, [32.066,34.777]);
-  });
-  $('#btnSearchAddress').addEventListener('click', geocodeAddress);
-  $('#btnMyLoc').addEventListener('click', () => getMyLocation(true));
-});
+qs("#modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+
+let modalEx = null;
+
+function openModal(ex){
+  modalEx = ex;
+  modalTitle.textContent = `${ex.title} — ${ex.artist}`;
+  modalMeta.textContent  = `${ex.venue} · ${fmtDate(ex.startDate)} – ${fmtDate(ex.endDate)}`;
+  modalDesc.textContent  = ex.description || "";
+  modalGallery.innerHTML = (ex.images||[]).map(src=>`<img src="${src}" alt="">`).join("");
+
+  followBtn.textContent = isFollowing(ex.artist) ? "Following" : "Follow artist";
+  followBtn.onclick = () => {
+    toggleFollow(ex.artist);
+    followBtn.textContent = isFollowing(ex.artist) ? "Following" : "Follow artist";
+  };
+
+  const navQ = ex.lat && ex.lng ? `${ex.lat},${ex.lng}` : `${ex.venue} ${ex.address}`;
+  navigateBtn.href = `https://www.google.com/maps?q=${encodeURIComponent(navQ)}`;
+  websiteBtn.href   = ex.website || "#";
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+}
+function closeModal(){
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+  modalEx = null;
+}
+
+/* --------------------------- Followed artists ---------------------------- */
+const FOLLOW_KEY = "iseeeee_follow_artists";
+function getFollowed(){
+  try{
+    return JSON.parse(localStorage.getItem(FOLLOW_KEY) || "[]");
+  }catch{ return []; }
+}
+function isFollowing(name){
+  return getFollowed().includes(name);
+}
+function toggleFollow(name){
+  const arr = getFollowed();
+  const i = arr.indexOf(name);
+  if(i>=0){ arr.splice(i,1); } else { arr.push(name); }
+  localStorage.setItem(FOLLOW_KEY, JSON.stringify(arr));
+}
+
+/* ------------------------------ Listeners -------------------------------- */
+radiusInput.addEventListener("input", render);
+qs("#filterBtn").addEventListener("click", render);
+
+/* פרה־רינדור + התנעת תור ג׳אוקודינג */
+render();
+ensureGeocodes();
